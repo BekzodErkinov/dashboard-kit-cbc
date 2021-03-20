@@ -9,7 +9,7 @@ import './Overview.scss'
 class Overview extends Component {
   render() {
     return (
-      <div>
+      <>
         <div className="overview-wrap">
           <header>
             <button className="about">
@@ -36,11 +36,11 @@ class Overview extends Component {
                 <h3 className="diagram-title">Today's trends</h3>
                 <div class="diagram-subtitle-wrap">
                   <p className="diagram-subtitle">as of 25 March 2021, 09:41 PM</p>
-                  <span>Today</span>
-                  <span>Yesterday</span>
+                  <span className="today">Today</span>
+                  <span className="yesterday">Yesterday</span>
                 </div>
               </div>
-              <img src={GraphImg} alt="Graph" />
+              <img className="diagraph-img" src={GraphImg} alt="Graph" />
             </div>
             <div className="statistics">
               <div className="stat-item">
@@ -69,34 +69,77 @@ class Overview extends Component {
           <footer>
             <div className="unresolved-ticket">
               <div className="unresolved-ticket-lead">
-                <div>
+                <div className="title">
                   <h3>Unresolved ticket</h3>
                   <button>View details</button>
                 </div>
-                <div>
+                <div className="subtitle">
                   <p>Group: <span>Support</span></p>
                 </div>
               </div>
               <div className="unresolved-ticket-body">
                 <div className="item">
-                  <p></p>
+                  <p>Waiting on Feature Request</p>
                   <span>4238</span>
+                </div>
+                <div className="item">
+                  <p>Awaiting Customer Response</p>
+                  <span>1005</span>
+                </div>
+                <div className="item">
+                  <p>Awaiting Developer Fix</p>
+                  <span>914</span>
+                </div>
+                <div className="item">
+                  <p>Pending</p>
+                  <span>281</span>
                 </div>
               </div>
             </div>
 
             <div className="tasks">
-              <div>
-                <h3>Unresolved ticket</h3>
-                <button>View details</button>
+              <div className="tasks-lead">
+                <div className="title">
+                  <h3>Tasks</h3>
+                  <button>View all</button>
+                </div>
+                <span className="subtitle">Today</span>
               </div>
-              <div>
-                <p>Group: <span>Support</span></p>
+              <div className="tasks-body">
+                <form action="#" id="add-task-form">
+                  <div className="add-task">
+                    <input type="text" placeholder="Create new task" required/>
+                    <button>+</button>
+                  </div>
+                </form>
+                <div className="checkboxes">
+                  <div className="check-item">
+                    <div className="checkbox">
+                      <input type="checkbox" />
+                      <p>Finish ticket update</p>
+                    </div>
+                    <span className="urgent">Urgent</span>
+                  </div>
+                  <div className="check-item">
+                    <div className="checkbox">
+                      <input type="checkbox" />
+                      <p>Create new ticket example</p>
+                    </div>
+                    <span className="new">New</span>
+                  </div>
+                  <div className="check-item">
+                    <div className="checkbox">
+                      <input type="checkbox" checked />
+                      <p>Update ticket report</p>
+                    </div>
+                    <span className="default">Default</span>
+                  </div>
+                </div>
               </div>
             </div>
           </footer>
         </div>
-      </div>
+      </>
     )
   }
 }
