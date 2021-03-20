@@ -76,6 +76,7 @@ class Sidebar extends Component {
             onClick={() => setActivePage('articles')}
           />
         </Link>
+        <span className="line"></span>
         <Link to="/settings">
           <SidebarBtn
             title='Settings'

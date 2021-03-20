@@ -1,5 +1,7 @@
 import { Component } from 'react'
 
+// Images
+import soon from '../../assets/images/soon.jpeg'
 // SCSS
 import './Ideas.scss'
 
@@ -55,6 +57,7 @@ class Ideas extends Component {
           <button onClick={this.decrement}>-</button>
           <button onClick={this.increment}>+</button>
         </div>
+        <img className="soon" src={soon} alt="Coming Soon!"/>
       </div>
     )
   }
